@@ -7,13 +7,12 @@ user = 0
 while True:
     user_input = input("rock, paper or scissors (r/p/s): ")
     computer_choice = random.choice(lists)
-
-    print(f"You chose: {emojis[user_input]}")
-    print(f"Computer Chose: {emojis[computer_choice]}")
     if user_input not in lists:
         print("Enter a valid input!")
         continue
-    elif (
+    print(f"You chose: {emojis[user_input]}")
+    print(f"Computer Chose: {emojis[computer_choice]}")
+    if (
             (user_input == "r" and computer_choice == "s") or
             (user_input == "s" and computer_choice == "p") or
             (user_input == "p" and computer_choice == "r")):
@@ -35,5 +34,7 @@ while True:
     elif should_continue == "n":
         print("Thank you for playing")
         break
+    else:
+        print("Enter a valid input!")
 
 
