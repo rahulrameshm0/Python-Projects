@@ -23,4 +23,11 @@ while True:
         print(f"User choice: scissors ✄\nComputer Choice: Scissors ✃\nIt's a draw!")
     else:
         print("Enter a valid input!")
+    should_continue = input("Do you need to continue? (y/n): ").lower()
+    if should_continue == "y":
+        continue
+    elif should_continue == "n":
+        print("Thank you for playing")
+        break
+
 
