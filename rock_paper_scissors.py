@@ -1,28 +1,34 @@
 import random
+emojis = {'r': '🪨', 'p': '📃', 's': '✃'}
 lists = ["r", "p", "s"]
+computer = 0
+user = 0
+
 while True:
     user_input = input("rock, paper or scissors (r/p/s): ")
     computer_choice = random.choice(lists)
-    if user_input == "r" and computer_choice == "r":
-        print("You chose: Rock 🪨\nComputer Choose: Rock 🪨\nIt's a draw!")
-    elif user_input == "r" and computer_choice == "p":
-        print("You chose: Rock 🪨\nComputer Choose: Paper 📃\nYou lose!")
-    elif user_input == "p" and computer_choice == "r":
-        print("You chose: Paper 📃\nComputer Choose: Rock 🪨\nYou win!")
-    elif user_input == "p" and computer_choice == "s":
-        print("You chose: Paper 📃\nComputer Choose: scissors ✁\nYou lose!")
-    elif user_input == "p" and computer_choice == "p":
-        print("User choice: Paper 📃\nComputer Choose: paper 📃\nit's a draw!")
-    elif user_input == "s" and computer_choice == "p":
-        print(f"User choice: Scissors ✄\nComputer Choice: Paper 📃\nYou win!")
-    elif user_input == "r" and computer_choice == "s":
-        print(f"User choice: Rock 🪨\nComputer Choice: Scissors ✄\nYou win!")
-    elif user_input == "s" and computer_choice == "r":
-        print(f"User choice: scissors ✄ \nComputer Choice: Rock 🪨\nYou lose!")
-    elif user_input == "s" and computer_choice == "s":
-        print(f"User choice: scissors ✄\nComputer Choice: Scissors ✃\nIt's a draw!")
-    else:
+
+    print(f"You chose: {emojis[user_input]}")
+    print(f"Computer Chose: {emojis[computer_choice]}")
+    if user_input not in lists:
         print("Enter a valid input!")
+        continue
+    elif (
+            (user_input == "r" and computer_choice == "s") or
+            (user_input == "s" and computer_choice == "p") or
+            (user_input == "p" and computer_choice == "r")):
+        print("You win")
+        user += 1
+    elif(
+            (user_input == "s" and computer_choice == "s") or
+            (user_input == "p" and computer_choice == "p") or
+            (user_input == "r" and computer_choice == "r")):
+        print("It's a draw!")
+    else:
+        print("You lose")
+        computer += 1
+    print(f"Your point = {user}")
+    print(f"Computer point = {computer}")
     should_continue = input("Do you need to continue? (y/n): ").lower()
     if should_continue == "y":
         continue
