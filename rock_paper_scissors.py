@@ -1,7 +1,6 @@
 import random
 emojis = {'r': '🪨', 'p': '📃', 's': '✃'}
 lists = ["r", "p", "s"]
-
 def get_user_choice():
     while True:
         user_input = input("rock, paper or scissors (r/p/s): ")
