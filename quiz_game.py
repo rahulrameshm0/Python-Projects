@@ -23,7 +23,7 @@ def run_quiz(question):
         print(f"{i['Prompt']}")
         for option in i['option']:
             print(option)
-        option = input("Enter your option: ")
+        option = input("Enter your option: ").upper()
 
         if option == i['answer']:
             count += 1
