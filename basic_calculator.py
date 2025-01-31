@@ -6,6 +6,7 @@ def main():
     user_choice = int(input("Enter your choice: "))
     calculator_creating(user_choice, num_1, num_2)
 def calculator_creating(user_input,num1,num2):
+
     if user_input == 1:
         total = num1 + num2
         print(f"Result: {total}")
@@ -15,9 +16,15 @@ def calculator_creating(user_input,num1,num2):
     elif user_input == 3:
         total = num1 * num2
         print(f"Result: {total}")
-    elif user_input == 3:
-        total = num1 / num2
-        print(f"Result: {total}")
+    elif user_input == 4:
+        if num2 == 0:
+            print("number is not divisible by zero!")
+            return
+        else:
+            total = num1 / num2
+            print(f"Result: {total}")
+    else:
+        print("Enter a valid number!")
 
 if __name__ == "__main__":
     main()
