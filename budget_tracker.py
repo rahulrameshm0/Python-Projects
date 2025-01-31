@@ -1,9 +1,7 @@
 print("Welcome to budget tracker!\n")
 shopping = {}
-amount = 0
-
 user_input = int(input("Enter your initial budget: "))
-amount += user_input
+amount = user_input
 
 def budget_menu():
     while True:
